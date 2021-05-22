@@ -1,10 +1,7 @@
-import { getDate, getMonth, getYear } from 'date-fns';
+import { format } from 'date-fns';
 
-const date = new Date(2021, 0, 1);
-console.log(date); // 2020-12-31T15:00:00.000Z
+console.log(format(new Date(), 'yyyy-MM-dd')); // 2021-05-23
+console.log(format(new Date(), 'yyyy-MM-dd HH:mm:ss')); // 2021-05-23 08:30:58
 
-console.log(`getDate(date): ${getDate(date)}`); // 1
-
-console.log(`getMonth(date): ${getMonth(date)}`); // 0
-
-console.log(`getYear: ${getYear(date)}`); // 2021
+// RangeError: Use `yyyy` instead of `YYYY`
+// console.log(format(new Date(), 'YYYY-MM-DD'));
