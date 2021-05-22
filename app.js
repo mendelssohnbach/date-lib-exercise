@@ -1,7 +1,7 @@
-import { format } from 'date-fns';
+import { addYears, addMonths, addDays } from 'date-fns';
 
-console.log(format(new Date(), 'yyyy-MM-dd')); // 2021-05-23
-console.log(format(new Date(), 'yyyy-MM-dd HH:mm:ss')); // 2021-05-23 08:30:58
+console.log(addYears(new Date(2021, 4, 23), 1));
+console.log(addYears(new Date(2021, 4, 23), 10));
 
-// RangeError: Use `yyyy` instead of `YYYY`
-// console.log(format(new Date(), 'YYYY-MM-DD'));
+console.log(addMonths(new Date(2012, 4, 23), 1));
+console.log(addMonths(new Date(2012, 4, 23), 12));

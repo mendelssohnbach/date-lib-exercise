@@ -23,6 +23,8 @@ console.log(`getMonth(date): ${getMonth(date)}`);
 ## format
 
 ```JavaScript
+import { format } from 'date-fns';
+
 console.log(format(new Date(), 'yyyy-MM-dd'));
 // 2021-05-23
 
@@ -37,3 +39,27 @@ console.log(format(new Date(), 'YYYY-MM-DD'));
 ```
 
 [format: Description](https://date-fns.org/v1.28.5/docs/format)
+
+## 加算
+
+年の加算
+
+```JavaScript
+import { addYears, addMonths, addDays } from 'date-fns';
+
+console.log(addYears(new Date(2021, 4, 23), 1));
+// 2022-05-22T15:00:00.000Z
+
+console.log(addYears(new Date(2021, 4, 23), 10));
+// 2031-05-22T15:00:00.000Z
+```
+
+月の加算
+
+```JavaScript
+console.log(addMonths(new Date(2012, 4, 23), 1));
+// 2012-06-22T15:00:00.000Z
+
+console.log(addMonths(new Date(2012, 4, 23), 12));
+// 2013-05-22T15:00:00.000Z
+```
