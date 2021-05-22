@@ -11,3 +11,9 @@ console.log(date);
 
 // 2020-12-31T15:00:00.000Z
 ```
+
+```JavaScript
+console.log(`getMonth(date): ${getMonth(date)}`);
+
+// 0 月は0始まり
+```
