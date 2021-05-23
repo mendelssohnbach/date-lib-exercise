@@ -1,11 +1,11 @@
-import { addYears, addMonths, addDays } from 'date-fns';
+const { addDays } = require('date-fns');
+const { utcToZonedTime } = require('date-fns-tz');
 
-console.log(addYears(new Date(2021, 4, 23), 1));
-console.log(addYears(new Date(2021, 4, 23), 10));
+const date = new Date('2012-05-23T15:00:00.000Z');
 
-console.log(addMonths(new Date(2012, 4, 23), 1));
-console.log(addMonths(new Date(2012, 4, 23), 12));
+// UTC TimeをAsia/Tokyo TimeZoneに切り替え
+const timeZone = 'Asia/Tokyo';
+const asiaZoneDate = utcToZonedTime(date, timeZone);
+console.log(`Asia/Tokyo Timezone: ${asiaZoneDate}`);
 
-console.log(addDays(new Date(2012, 4, 23), 1));
-console.log(addDays(new Date(2012, 4, 23), 7));
-console.log(addDays(new Date(2012, 4, 23), 10));
+console.log(addDays(asiaZoneDate, 1));

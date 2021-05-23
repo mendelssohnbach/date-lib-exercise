@@ -92,3 +92,30 @@ console.log(addDays(new Date(2012, 4, 23), 1));
 console.log(addDays(new Date(2012, 4, 23), 0));
 // 2012-05-20T15:00:00.000Z
 ```
+
+タイムゾーンの切り替えが必要。 `date-fns-tz` パッケージを導入
+
+```
+npm i date-fns-tz
+```
+
+> 'date-fns-tz'はCommonJSモジュールであり、名前付きエクスポートとしてすべてのmodule.exportsをサポートしているとは限りません。
+
+`utcToZonedTime` は`CommonJS`のみサポート。＊2021/05/23に確認
+
+```JavaScript
+const { addDays } = require('date-fns');
+const { utcToZonedTime } = require('date-fns-tz');
+
+const date = new Date('2012-05-23T15:00:00.000Z');
+
+// UTC TimeをAsia/Tokyo TimeZoneに切り替え
+const timeZone = 'Asia/Tokyo';
+const asiaZoneDate = utcToZonedTime(date, timeZone);
+console.log(`Asia/Tokyo Timezone: ${asiaZoneDate}`);
+// Asiz/Tokyo Timezone: Thu May 24 2012 00:00:00 GMT+0900 (日本標準時)
+
+console.log(addDays(asiaZoneDate, 1));
+// 2012-05-24T15:00:00.000Z
+```
+
