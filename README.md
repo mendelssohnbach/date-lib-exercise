@@ -63,3 +63,32 @@ console.log(addMonths(new Date(2012, 4, 23), 1));
 console.log(addMonths(new Date(2012, 4, 23), 12));
 // 2013-05-22T15:00:00.000Z
 ```
+
+日の加算
+
+```JavaScript
+console.log(addDays(new Date(2012, 4, 23), 1));
+// 2012-05-23T15:00:00.000Z
+
+console.log(addDays(new Date(2012, 4, 23), 7));
+// 2012-05-29T15:00:00.000Z
+
+console.log(addDays(new Date(2012, 4, 23), 10));
+// 2012-06-01T15:00:00.000Z
+```
+
+### 問題の発生
+
+`2021/05/23` の処理で1日加算したが、当日が出力される
+
+```JavaScript
+console.log(addDays(new Date(2012, 4, 23), 1));
+// 2012-05-23T15:00:00.000Z
+```
+
+`0` を関した結果
+
+```JavaScript
+console.log(addDays(new Date(2012, 4, 23), 0));
+// 2012-05-20T15:00:00.000Z
+```

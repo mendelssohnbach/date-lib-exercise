@@ -5,3 +5,7 @@ console.log(addYears(new Date(2021, 4, 23), 10));
 
 console.log(addMonths(new Date(2012, 4, 23), 1));
 console.log(addMonths(new Date(2012, 4, 23), 12));
+
+console.log(addDays(new Date(2012, 4, 23), 1));
+console.log(addDays(new Date(2012, 4, 23), 7));
+console.log(addDays(new Date(2012, 4, 23), 10));
